@@ -1,0 +1,22 @@
+# vim: set syntax=yaml ts=2 sw=2 sts=2 et :
+
+package-name:       qubes-mgmt-salt-windows-mgmt
+saltenv:            base
+version:            1.0.0
+release:            1
+name:               windows-mgmt
+top_level_dir:      windows-mgmt
+formula-files:      README.md LICENSE windows-mgmt
+pillar-files:       pillar/windows-mgmt
+formula_dir:        $(MGMT_DEFAULT_FORMULA_DIR)/$(MGMT_SALTENV)/$(MGMT_NAME)
+pillar_dir:         $(MGMT_DEFAULT_PILLAR_DIR)/$(MGMT_SALTENV)/$(MGMT_TOP_LEVEL_DIR)
+os:                 Qubes
+os_family:          RedHat
+summary:            Setup Windows management AppVM.
+description: |
+  Setup Windows management AppVM.
+
+pillar-tops:
+  dom0:
+    enable:
+      - windows-mgmt

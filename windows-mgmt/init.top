@@ -1,0 +1,7 @@
+base:
+  dom0:
+    - windows-mgmt.dom0
+  {{ salt['pillar.get']('windows-mgmt:template', 'fedora-32') }}:
+    - windows-mgmt.template
+  windows-mgmt:
+    - windows-mgmt.vm

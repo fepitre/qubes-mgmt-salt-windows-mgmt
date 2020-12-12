@@ -1,0 +1,40 @@
+
+Name:      qubes-mgmt-salt-windows-mgmt
+Version:   @VERSION@
+Release:   1%{?dist}
+Summary:   Setup Windows management AppVM.
+License:   GPL 2.0
+URL:	   http://www.qubes-os.org/
+BuildArch: noarch
+Requires:  qubes-mgmt-salt
+Requires:  qubes-mgmt-salt-dom0
+
+Source0: %{name}-%{version}.tar.gz
+
+%description
+%{summary}.
+
+%prep
+%setup -q
+
+%build
+
+%install
+%make_install
+
+%files
+%defattr(-,root,root)
+%doc LICENSE README.md
+%attr(750, root, root) %dir /srv/formulas/base/windows-mgmt
+/srv/formulas/base/windows-mgmt/README.md
+/srv/formulas/base/windows-mgmt/LICENSE
+/srv/formulas/base/windows-mgmt/windows-mgmt
+
+%attr(750, root, root) %dir /srv/pillar/base/windows-mgmt
+%config(noreplace) /srv/pillar/base/windows-mgmt/init.sls
+/srv/pillar/base/windows-mgmt/init.top
+
+%config(noreplace) /etc/salt/minion.d/windows-mgmt.conf
+
+%changelog
+@CHANGELOG@
