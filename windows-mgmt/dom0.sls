@@ -32,6 +32,7 @@ windows-mgmt-rpc:
         admin.vm.Create.StandaloneVM * windows-mgmt dom0 allow
         admin.vm.Create.TemplateVM * windows-mgmt dom0 allow
         admin.vm.Create.AppVM * windows-mgmt dom0 allow
+        admin.vm.Remove * windows-mgmt dom0 allow target=dom0
 
         qubes.Filecopy * windows-mgmt @tag:created-by-windows-mgmt allow
 
