@@ -35,6 +35,8 @@ windows-mgmt-rpc:
         admin.vm.Remove * windows-mgmt @tag:created-by-windows-mgmt allow target=dom0
 
         qubes.Filecopy * windows-mgmt @tag:created-by-windows-mgmt allow
+        qubes.WaitForSession * windows-mgmt @tag:created-by-windows-mgmt allow
+        qubes.VMShell * windows-mgmt @tag:created-by-windows-mgmt allow
 
 #qubes-windows-tools:
 #  pkg.installed:
